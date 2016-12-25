@@ -102,8 +102,9 @@ func runGoTestInThisAndAllSubDirectories(path string){
 			log.Info("", zap.String("output", output.String()))
 			if err != nil {
 				log.Error("error running tests", zap.Error(err))
+			} else {
+				coverageFilePaths = append(coverageFilePaths, filepath.Join(path, "coverage.out"))
 			}
-			coverageFilePaths = append(coverageFilePaths, filepath.Join(path, "coverage.out"))
 			testsNotYetRunHere = false
 		}
 	}
