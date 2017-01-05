@@ -81,7 +81,6 @@ func main() {
 }
 
 func runGoTestInThisAndAllSubDirectories(path string){
-	log.Info("processing", zap.String("directory", path))
 	fileInfos, err := ioutil.ReadDir(path)
 	if err != nil {
 		log.Error("Couldn't read directory", zap.Error(err))
